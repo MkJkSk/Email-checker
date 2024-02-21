@@ -84,18 +84,16 @@ DATABASES = {
         'PASSWORD': 'Newship@123',
         'HOST': '127.0.0.1',  
         'PORT': '3306', 
-
+},
     'oracle_db':{
-        'ENGINE': 'django.db.backends.oracle',
+       'ENGINE': 'django.db.backends.oracle',
         'NAME': 'localhost:1521/xe',
         'USER': 'SYSTEM',
         'PASSWORD': 'admin',
-        
-        }    
-     }
-
-    
+    }, 
 }
+    
+
 
 
 # Password validation
