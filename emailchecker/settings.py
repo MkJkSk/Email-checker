@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3kd#c&8zmnrsb5zwn9+ing7e9w494x7u-wbfe5pl@987ws@rht
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'emailapp',
-    
    
     
 ]
@@ -78,19 +77,21 @@ WSGI_APPLICATION = 'emailchecker.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'MYSQL': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_project',
+        'NAME': 'emailchecker',
         'USER': 'root',
-        'PASSWORD': 'Newship@123',
-        'HOST': '127.0.0.1',  
+        'PASSWORD': 'password',
+        'HOST': '192.168.1.35',  
         'PORT': '3306', 
 },
-    'oracle_db':{
-       'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'localhost:1521/xe',
-        'USER': 'SYSTEM',
-        'PASSWORD': 'admin',
+    'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ec_mariadb',
+	'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': '192.168.1.35',
+        'PORT': '3307',
     }, 
 }
 
