@@ -81,7 +81,7 @@ DATABASES = {
        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ec_ql',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'docker',
         'HOST': '192.168.1.51',  
         'PORT': '3306', 
 },

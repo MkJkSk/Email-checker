@@ -1,0 +1,30 @@
+FROM python:3.13.0a4-bullseye
+
+ENV DJANGO_SETTINGS_MODULE=/app/emailchecker/settings.py
+ENV PORT=8000
+
+ENV MYSQL_CFLAGS="-I/usr/include/mysql"
+ENV MYSQL_LIBS="-L/usr/lib -lmysqlclient"
+
+WORKDIR /app
+RUN apt-get update && apt-get install -y pkg-config build-essential default-libmysqlclient-dev sqlite3
+# Install dependencies
+
+RUN pip install mysqlclient
+RUN pip install django-prometheus
+RUN wget https://dlm.mariadb.com/2678574/Connectors/c/connector-c-3.3.3/mariadb-connector-c-3.3.3-debian-bullseye-amd64.tar.gz -O - | tar -zxf - --strip-components=1 -C /usr
+
+
+COPY requirements.txt . 
+RUN pip install -r requirements.txt
+
+COPY . .
+EXPOSE 3306:3306
+EXPOSE 3307:3307
+EXPOSE 5432:5432
+EXPOSE 8000  
+HEALTHCHECK CMD curl --fail http://localhost:$PORT/health/ || exit 1
+CMD ["export DJANGO_SETTINGS_MODULE=emailchecker.settings"]
+CMD ["./startup.sh"]
+
+#ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
