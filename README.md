@@ -57,13 +57,13 @@ docker run -it -e DJANGO_SETTINGS_MODULE=emailchecker.settings -p 8000:8000 --ne
 ```console
 docker logs container_id
 ```
-*Enables automatic adding of timestamp fields for new objects in the default database.
-*Executes migrations without requiring manual input.
-*Creates migrations for changes in models.
-*Executes migrations to add a new column named "Submission_time".
-*Generates an empty migration for setting timezone in MySQL.
-*Executes migrations specifically for the MySQL database to add the "Submission_time" column.
-*Initiates the Django web server to run the application on port 8000. 
+* Enables automatic adding of timestamp fields for new objects in the default database.
+* Executes migrations without requiring manual input.
+* Creates migrations for changes in models.
+* Executes migrations to add a new column named "Submission_time".
+* Generates an empty migration for setting timezone in MySQL.
+* Executes migrations specifically for the MySQL database to add the "Submission_time" column.
+* Initiates the Django web server to run the application on port 8000. 
 ```console
 #!/bin/sh
 
