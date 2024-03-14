@@ -31,7 +31,8 @@ docker build -t sql . -f Dockerfile-sql
 
 docker build -t mariadb-custom . -f Dockerfile-mariadb
 
-Start the containers
+Start  Containers
+
 ```
 
 **Run the Docker Containers:**
