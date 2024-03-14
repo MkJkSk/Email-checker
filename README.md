@@ -94,7 +94,7 @@ sleep 2
 python manage.py runserver 0.0.0.0:8000
 ```
 Second Option:
-*This command go inside the container and run migrate and makemigrations command.
+* This command go inside the container and run migrate and makemigrations command.
 ```console
 docker exec -it container_id bash
 
