@@ -81,8 +81,14 @@ python manage.py migrate --database=MYSQL --noinput
 
 echo "Running webserver command "
 sleep 2
-python manage.py runserver 0.0.0.0:8000 
+python manage.py runserver 0.0.0.0:8000
 
+Second Option:
+This command go inside the container and run migrate and makemigrations command
+docker exec -it container_id bash
+
+python manage.py makemigrations
+python manage.py migrate  
 ```
 Access the app at http://localhost:8000
 
