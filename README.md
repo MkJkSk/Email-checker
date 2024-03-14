@@ -53,8 +53,18 @@ docker run -it -e DJANGO_SETTINGS_MODULE=emailchecker.settings -p 8000:8000 --ne
 
 
 **Run migrations**
+* Please run the log command first to start container.
 ```console
-docker logs container_id it will  automatically make migrations and migrate given below:
+docker logs container_id
+```
+*Enables automatic adding of timestamp fields for new objects in the default database.
+*Executes migrations without requiring manual input.
+*Creates migrations for changes in models.
+*Executes migrations to add a new column named "Submission_time".
+*Generates an empty migration for setting timezone in MySQL.
+*Executes migrations specifically for the MySQL database to add the "Submission_time" column.
+*Initiates the Django web server to run the application on port 8000. 
+```console
 #!/bin/sh
 
 export DJANGO_DB_DEFAULT_AUTO_NOW_ADD_ALL=true
@@ -82,13 +92,14 @@ python manage.py migrate --database=MYSQL --noinput
 echo "Running webserver command "
 sleep 2
 python manage.py runserver 0.0.0.0:8000
-
+```
 Second Option:
-This command go inside the container and run migrate and makemigrations command
+*This command go inside the container and run migrate and makemigrations command.
+```console
 docker exec -it container_id bash
 
 python manage.py makemigrations
-python manage.py migrate  
+python manage.py migrate
 ```
 Access the app at http://localhost:8000
 
