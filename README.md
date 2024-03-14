@@ -28,6 +28,9 @@ git clone https://github.com/Knowledgesprint-Technologies/Email_Checker.git
 docker build -t email-checker . -f Dockerfile2
 
 docker build -t sql . -f Dockerfile-sql
+
+docker build -t mariadb-custom . -f Dockerfile-mariadb
+
 Start the containers
 ```
 
@@ -36,9 +39,11 @@ Start the containers
 * Please run the DB before hand as Django doesnt auto connect to the DB after launching the Django Container first.
 
 ```console
-docker run -d -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=emailchecker -p 3306:3306 --network email-net mysql
+docker run --name mysql-vol -e MYSQL_ROOT_PASSWORD=docker -p 3306:3306 -d --mount source=mysqlvolume,target=/var/lib/mysql  mysql
 
-docker run -p 3307:3306 -e MARIADB_ROOT_PASSWORD=password -d mariadb:latest
+
+docker run --name mariadb-vol -e MARIADB_ROOT_PASSWORD=password -p 3307:3306 -d --mount source=mariadb,target=/var/lib/mysql  mariadb:latest 
+
 
 docker run -it -e DJANGO_SETTINGS_MODULE=emailchecker.settings -p 8000:8000 --network email-net projectfndev/email-checker
 ```
