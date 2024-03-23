@@ -1,0 +1,36 @@
+EMAIL CHECKER WEBSITE REQUIRED DETAILS
+
+Programming Language : Python 3.10.8
+
+Django Version : 5.0.1
+
+MySQl Client version : 3.3.8
+
+MySQL WorkBench 8.0 CE
+
+
+
+To Downlaod  Python 3.10.8  https://www.python.org/downloads/release/python-3108/
+
+
+Command to install Django:pip install Django==5.0.1
+
+
+
+Note:Following these credentials, along with this, you want to download VSCode and extensions like Django, HTML CSS support, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

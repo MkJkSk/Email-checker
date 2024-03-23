@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Checker</title>
+    <link rel="icon" type="image" href="Email_icon.ico">
+    <style>
+        body {
+            background-color: silver;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(C:\Users\Lenovo\OneDrive\Desktop\Django\emailchecker\emailapp\templates\emailapp\Email_background.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            /* Increase the max-width for a larger container */
+        }
+
+        textarea#emails {
+            margin-bottom: 10px;
+            padding: 12px;
+            /* Increase padding for a larger text area */
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            /* Increase font size for better readability */
+            resize: vertical;
+            /* Allow vertical resizing */
+        }
+
+        button {
+            background-color: steelblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            /* Add margin for better spacing */
+        }
+
+        .success-message {
+            margin-top: 10px; /* Added margin for spacing */
+            color: green; /* Set color for valid emails */
+        }
+
+        .error-message {
+            margin-top: 10px; /* Added margin for spacing */
+            color: red; /* Set color for invalid emails */
+        }
+
+        /* Updated styling to place valid_emails on the left and invalid_emails on the right */
+        #valid_output {
+            float: left;
+            width: 48%; /* Adjust width for better alignment */
+        }
+
+        #invalid_output {
+            float: right;
+            width: 48%; /* Adjust width for better alignment */
+        }
+
+        .copy-button {
+            background-color: Silver;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        /* Added style for the "Copy Valid Emails" button */
+        #copy_valid_button {
+            background-color: Silver;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Added margin for spacing */
+        }
+
+        /* Added style for the "Reset" button */
+        .reset-button {
+            background-color: gray;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            /* Add margin for better spacing */
+        }
+        textarea#emails {
+            margin-bottom: 10px;
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: vertical;
+            overflow-y: scroll; /* Added scroll bar for vertical overflow */
+        }
+        textarea#emails {
+            margin-bottom: 10px;
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: vertical;
+            overflow-y: scroll; /* Added scroll bar for vertical overflow */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: steelblue;">Email Validation</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="emails">Enter Emails:</label>
+            <textarea id="emails" name="emails" required rows="4"></textarea>
+
+            <div>
+                <button type="submit">Process</button>
+                <button type="button" class="reset-button" onclick="location.reload()">Reset</button>
+            </div>
+
+            <div>
+                <div id="invalid_output">
+                    {% if invalid_emails %}
+                        <p class="error-message">Invalid emails</p>
+                        <ul>
+                            {% for email in invalid_emails %}
+                                <li>{{ email }}</li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <button class="copy-button" onclick="copyToClipboard('invalid_output')">Copy Invalid Emails</button>
+                        
+                        <button type="button" class="reset-button" onclick="resetSection('invalid_output')">Reset</button>
+                    {% endif %}
+                </div>
+
+                <div id="valid_output">
+                    {% if valid_emails %}
+                        <p class="success-message">Valid emails</p>
+                        <ul>
+                            {% for email in valid_emails %}
+                                <li>{{ email }}</li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <button id="copy_valid_button" onclick="copyToClipboard('valid_output')">Copy Valid Emails</button>
+                        
+                        <button type="button" class="reset-button" onclick="resetSection('valid_output')">Reset</button>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+
+        <script>
+            function copyToClipboard(elementId) {
+                var copyList = document.getElementById(elementId).querySelector('ul');
+                var textContent = Array.from(copyList.children).map(li => li.textContent).join('\n');
+                var tempTextArea = document.createElement('textarea');
+                tempTextArea.value = textContent;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+                alert("Copied to clipboard:\n" + textContent);
+            }
+
+            function resetSection(elementId) {
+                document.getElementById(elementId).innerHTML = '';
+            }
+        </script>
+    </div>
+</body>
+
+</html>
+
+
+
+  
+
+  
+
+
