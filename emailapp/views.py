@@ -21,12 +21,7 @@ def email_check(request):
 
                     ValidEmail.objects.save_to_database(email=email.strip(), database_alias='default')
 
-                existing_entry_mysql = ValidEmail.objects.using('MYSQL').filter(email=email.strip()).first()
-
-                if not existing_entry_mysql:
-
-                    ValidEmail.objects.save_to_database(email=email.strip(), database_alias='MYSQL')
-
+               
             except ValidationError:
                 invalid_emails.append(email)
 

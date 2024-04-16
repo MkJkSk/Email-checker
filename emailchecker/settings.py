@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'emailchecker.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ec_mariadb',
-        'USER': 'root',
-        'PASSWORD': 'Newship@123',
-        'HOST': 'localhost',
-        'PORT': 3307,
-    },
+    # 'default':{
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'ec_mariadb',
+    #     'USER': 'root',
+    #     'PASSWORD': 'Newship@123',
+    #     'HOST': 'localhost',
+    #     'PORT': 3307,
+    # },
     
-    'MYSQL':{
+    'default':{
        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_project',
         'USER': 'root',
