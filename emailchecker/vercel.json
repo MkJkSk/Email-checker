@@ -24,7 +24,10 @@
             "src": "/(.*)",
             "dest": "emailchecker/wsgi.py"
         }
-    ]
+    ],
+    
+        "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+    }
     
       
-}
+
