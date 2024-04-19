@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3kd#c&8zmnrsb5zwn9+ing7e9w494x7u-wbfe5pl@987ws@rht
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app'  , '.now.sh' ] 
+ALLOWED_HOSTS = ['.vercel.app'  , '.now.sh',  '127.0.0.1' ] 
 
 
 # Application definition
@@ -77,25 +77,25 @@ WSGI_APPLICATION = 'emailchecker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    # 'default':{
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'ec_mariadb',
-    #     'USER': 'root',
-    #     'PASSWORD': 'Newship@123',
-    #     'HOST': 'localhost',
-    #     'PORT': 3307,
-    # },
+# DATABASES = {
+#     # 'default':{
+#     #     'ENGINE': 'django.db.backends.mysql',
+#     #     'NAME': 'ec_mariadb',
+#     #     'USER': 'root',
+#     #     'PASSWORD': 'Newship@123',
+#     #     'HOST': 'localhost',
+#     #     'PORT': 3307,
+#     # },
     
-    'default':{
-       'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_project',
-        'USER': 'root',
-        'PASSWORD': 'Newship@123',
-        'HOST': 'localhost',
-        'PORT':3306,
-    }, 
-}
+#     'default':{
+#        'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_project',
+#         'USER': 'root',
+#         'PASSWORD': 'Newship@123',
+#         'HOST': 'localhost',
+#         'PORT':3306,
+#     }, 
+# }
 
 
 
