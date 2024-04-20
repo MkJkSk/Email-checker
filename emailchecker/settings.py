@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3kd#c&8zmnrsb5zwn9+ing7e9w494x7u-wbfe5pl@987ws@rht
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app'  , '.now.sh',  '127.0.0.1','https://email-checker-9l4c.vercel.app/' ] 
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
 
 
 # Application definition
@@ -77,25 +77,30 @@ WSGI_APPLICATION = 'emailchecker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     # 'default':{
-#     #     'ENGINE': 'django.db.backends.mysql',
-#     #     'NAME': 'ec_mariadb',
-#     #     'USER': 'root',
-#     #     'PASSWORD': 'Newship@123',
-#     #     'HOST': 'localhost',
-#     #     'PORT': 3307,
-#     # },
+DATABASES = {
+    # 'default':{
+    #      'ENGINE': 'django.db.backends.mysql',
+    #      'NAME': 'ec_mariadb',
+    #      'USER': 'root',
+    #      'PASSWORD': 'Newship@123',
+    #      'HOST': 'localhost',
+    #      'PORT': 3307,
+    #  },
     
-#     'default':{
-#        'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django_project',
-#         'USER': 'root',
-#         'PASSWORD': 'Newship@123',
-#         'HOST': 'localhost',
-#         'PORT':3306,
-#     }, 
-# }
+    # 'default':{
+    #    'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'django_project',
+    #     'USER': 'root',
+    #     'PASSWORD': 'Newship@123',
+    #     'HOST': 'localhost',
+    #     'PORT':3306,
+    # }, 
+    'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+},
+
+}
 
 
 
@@ -145,6 +150,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 import os
-STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
