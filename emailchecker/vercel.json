@@ -8,6 +8,10 @@
     { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "/emailchecker/wsgi.py" }
   ],
+  "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
+    ],
+  
   "env": {
     "DATABASE_NAME": "django_project",
     "DATABASE_USER": "root",
@@ -16,5 +20,9 @@
     "DATABASE_PORT": "3306",
     "DATABASE_URL_mysql": "mysql://root:Newship@123@localhost:3306/django_project",
     "DATABASE_URL_sqlite": "sqlite:///path_to_your_db.sqlite3"
+
   }
+
+ 
+  
 }
