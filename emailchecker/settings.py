@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -84,12 +83,12 @@ DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_Project',
-        'USER': 'postgres',
-        'PASSWORD': 'mXJADEbDqfPKKnrLkpywDTSuZMgQRnJp',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '42394',
-    }
-}
+        'USER': 'root',
+        'PASSWORD': 'Newship@123',
+#         'HOST': 'viaduct.proxy.rlwy.net',
+#         'PORT': '5432',
+   }
+ }
 
 
 

@@ -8,9 +8,9 @@ class ValidEmailManager(models.Manager):
 
 class ValidEmail(models.Model):
     email = models.EmailField(unique=True)
-    #submission_date = models.DateField(auto_now_add=True)
-    # submission_time = models.TimeField(auto_now_add=True)
-    date_added = models.DateTimeField(auto_now_add=True)
+    submission_date = models.DateField(auto_now_add=True)
+    submission_time = models.TimeField(auto_now_add=True)
+    #date_added = models.DateTimeField(auto_now_add=True)
 
     objects = ValidEmailManager()
 
