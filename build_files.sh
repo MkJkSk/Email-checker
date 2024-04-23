@@ -8,7 +8,7 @@
 echo "BUILD START"
 
 # Activate the virtual environment
-source /path/to/your/virtualenv/bin/activate
+source mk/Script/Activate
 
 # Install dependencies from requirements.txt
 pip install -r requirements.txt
