@@ -8,13 +8,13 @@
 echo "BUILD START"
 
 # Activate the virtual environment
-mk\Scripts\Activate
+source mk/bin/activate
 
 # Install dependencies from requirements.txt
-pip install -r requirements.txt
+mk/bin/pip install -r requirements.txt
 
 # Run collectstatic command
-python manage.py collectstatic --noinput --clear
+mk/bin/python manage.py collectstatic --noinput --clear
 
 # Deactivate the virtual environment
 deactivate
