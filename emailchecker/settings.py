@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -89,21 +90,23 @@ DATABASES = {
     #      'PORT': 3307,
     #  },
     
-    # 'default':{
-    #    'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'django_project',
-    #     'USER': 'root',
-    #     'PASSWORD': 'Newship@123',
-    #     'HOST': 'localhost',
-    #     'PORT':3306,
-    # }, 
+    'default': dj_database_url.config(default=os.environ.get('sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))),
+    'mysql': dj_database_url.config(default=os.environ.get(f"mysql://{os.environ.get('root')}:{os.environ.get('Newship@123')}@{os.environ.get('localhost')}:3306/{os.environ.get('django_project')}")),
+    
+    'mysql':{
+       'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('django_project'),
+        'USER': os.environ.get('root'),
+        'PASSWORD': os.environ.get('Newship@123'),
+        'HOST': os.environ.get('localhost'),
+        'PORT':os.environ.get(3306),
     'default': {
     'ENGINE': 'django.db.backends.sqlite3',
     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 },
 
+},
 }
-
 
 
 
