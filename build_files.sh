@@ -17,7 +17,7 @@
 echo "BUILD START"
 
 # Activate virtual environment
-source C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker\mk\Scripts || { echo "Failed to activate virtual environment"; exit 1; }
+source C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker\mk\Scripts\activate || { echo "Failed to activate virtual environment"; exit 1; }
 
 # Install pip if not available
 python3.9 -m ensurepip || { echo "Failed to ensure pip is available"; exit 1; }
