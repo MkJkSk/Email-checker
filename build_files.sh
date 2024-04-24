@@ -1,7 +1,7 @@
 echo "BUILD START"
 
 # Activate the virtual environment (assuming it's in the mk/Scripts directory)
-source mk/Scripts/activate.bat
+source emailchecker/mk/Scripts/activate.bat
 
 # Install dependencies from requirements.txt
 pip install -r requirements.txt
