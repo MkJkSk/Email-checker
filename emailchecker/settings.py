@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-3kd#c&8zmnrsb5zwn9+ing7e9w494x7u-wbfe5pl@987ws@rht
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,16 +79,16 @@ WSGI_APPLICATION = 'emailchecker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_Project',
-        'USER': 'root',
-        'PASSWORD': 'Newship@123',
-        'HOST': 'localhost',
-        'PORT': '3306',
-   }
- }
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_Project',
+#         'USER': 'root',
+#         'PASSWORD': 'Newship@123',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#    }
+#  }
 
 
 
@@ -110,6 +110,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Internationalization
@@ -137,11 +141,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 
