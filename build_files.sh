@@ -1,14 +1,18 @@
 echo "BUILD START"
 
-source mk/Scripts/activate
+# Activate the virtual environment (assuming it's in the mk/Scripts directory)
+source mk/Scripts/activate.bat
 
-python3.9 -m pip install -r requirements.txt 
-python3.9 manage.py collectstatic --noinput --clear
- 
- deactivate
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+
+# Run collectstatic command
+python manage.py collectstatic --noinput --clear
+
+# Deactivate the virtual environment
+deactivate
 
 echo "BUILD STOP"
-
 
 
 # echo "BUILD START"
