@@ -1,6 +1,6 @@
 echo "BUILD START"
 
-.\emailchecker\mk\Scripts\activate
+\emailchecker\mk\Scripts\activate.bat
 
 
 python3.9 -m pip install -r requirements.txt 
