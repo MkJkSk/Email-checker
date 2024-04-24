@@ -1,6 +1,6 @@
 echo "BUILD START"
 
-./emailchecker/mk/Scripts/activate.bat
+emailchecker/mk/Scripts/activate.bat
 
 
 pip install -r requirements.txt
