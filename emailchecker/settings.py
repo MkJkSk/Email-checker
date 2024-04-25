@@ -88,7 +88,8 @@ WSGI_APPLICATION = 'emailchecker.wsgi.application'
 #         'HOST': 'localhost',
 #         'PORT': '3306',
 #    }
-#  }
+
+# }
 
 
 
@@ -110,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 MEDIA_URLS = '/media/'

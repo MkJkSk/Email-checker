@@ -22,6 +22,8 @@ def email_check(request):
                     ValidEmail.objects.save_to_database(email=email.strip(), database_alias='default')
 
                
+
+               
             except ValidationError:
                 invalid_emails.append(email)
 
