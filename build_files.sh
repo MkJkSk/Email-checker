@@ -1,9 +1,10 @@
-echo "BUILD START"
-source /vercel/path0/.venv/bin/activate 
+@echo off
+echo BUILD START
 
-python3.9 -m pip install -r requirements.txt 
-python3.9 manage.py collectstatic --noinput --clear
-echo "BUILD STOP"
+call C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker\mk\Scripts\activate.bat
 
+python -m pip install -r requirements.txt
+python manage.py collectstatic --noinput --clear
 
+echo BUILD STOP
 
