@@ -21,7 +21,8 @@ if exist "Scripts\activate.bat" (
     exit /b 1
 )
 
-python3.9.0 -m pip install -r requirements.txt
-python3.9.0 manage.py collectstatic --noinput --clear
+python -m pip install -r requirements.txt
+python manage.py collectstatic --noinput --clear
 
 echo BUILD STOP
+
