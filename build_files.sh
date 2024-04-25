@@ -9,17 +9,10 @@
 # echo BUILD STOP
 
 
-@echo off
+@
 echo BUILD START
 
-cd /D "C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker\mk"
-
-if exist "Scripts\activate.bat" (
-    call Scripts\activate.bat
-) else (
-    echo Unable to find the virtual environment activation script.
-    exit /b 1
-)
+ C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker> mk\Scripts\Activate
 
 python3.9 -m pip install -r requirements.txt
 python3.9 manage.py collectstatic --noinput --clear
