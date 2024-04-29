@@ -13,7 +13,7 @@
 echo BUILD START
 
 # Activate the virtual environment
-source mk/Scripts/activate  # for Windows, use `mk\Scripts\activate`
+'mk/Scripts/activate'  # for Windows, use `mk\Scripts\activate`
 
 # Install requirements
 python3.9 -m pip install -r requirements.txt
