@@ -12,9 +12,13 @@
 
 echo BUILD START
 
- C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker> mk\Scripts\Activate
+# Activate the virtual environment
+source mk/Scripts/activate  # for Windows, use `mk\Scripts\activate`
 
+# Install requirements
 python3.9 -m pip install -r requirements.txt
+
+# Collect static files
 python3.9 manage.py collectstatic --noinput --clear
 
 echo BUILD STOP
