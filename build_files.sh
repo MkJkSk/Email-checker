@@ -9,7 +9,7 @@
 # echo BUILD STOP
 
 
-@
+
 echo BUILD START
 
  C:\Users\Lenovo\OneDrive\Desktop\Local_Pr\emailchecker> mk\Scripts\Activate
